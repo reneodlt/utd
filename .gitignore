@@ -1,0 +1,27 @@
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+backend/db.sqlite3*
+backend/backups/
+backend/staticfiles/
+backend/media/
+.pytest_cache/
+
+# Node
+node_modules/
+frontend/dist/
+
+# OS / editors
+.DS_Store
+.idea/
+.vscode/
+*.log
+
+# Local config and secrets
+.env
+.env.*
+.claude/
+
+# build artifacts
+frontend/tsconfig.tsbuildinfo

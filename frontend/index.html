@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <title>UTD — Ultimate Todo</title>
+
+    <!-- Home-screen app (iOS "Add to Home Screen", and other browsers) -->
+    <link rel="manifest" href="/manifest.webmanifest" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png" />
+    <meta name="apple-mobile-web-app-title" content="UTD" />
+    <meta name="application-name" content="UTD" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <!-- Content runs under the status bar; the header pads for the notch. -->
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="format-detection" content="telephone=no" />
+    <!-- Browser/status bar colour: set per theme by the script below and src/theme.ts -->
+    <meta name="theme-color" content="#121b29" />
+    <script>
+      // Resolve the theme before first paint so there's no flash of the
+      // wrong palette. Kept in sync at runtime by src/theme.ts.
+      (function () {
+        var pref = null;
+        try {
+          pref = localStorage.getItem("utd-theme");
+        } catch (e) {}
+        if (pref !== "light" && pref !== "dark" && pref !== "black") pref = "system";
+        var theme =
+          pref === "system"
+            ? (matchMedia("(prefers-color-scheme: light)").matches ? "light" : "dark")
+            : pref;
+        document.documentElement.dataset.theme = theme;
+        var bar = { light: "#e9edf4", dark: "#121b29", black: "#000000" }[theme];
+        document.querySelector('meta[name="theme-color"]').setAttribute("content", bar);
+      })();
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>

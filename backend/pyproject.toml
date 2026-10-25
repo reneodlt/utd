@@ -1,0 +1,24 @@
+[project]
+name = "backend"
+version = "0.1.0"
+requires-python = ">=3.12"
+dependencies = [
+    "certifi>=2026.7.22",
+    "channels>=4",
+    "daphne>=4.2.2",
+    "django>=5.1,<6",
+    "django-cors-headers>=4.9.0",
+    "djangorestframework>=3.17.1",
+    "pillow>=12.3.0",
+    "psycopg[binary]>=3.2",
+    "utd-mcp",
+    "whitenoise>=6.8",
+]
+
+[tool.uv.sources]
+utd-mcp = { path = "../mcp-server", editable = true }
+
+[dependency-groups]
+dev = [
+    "websockets>=16.0",
+]

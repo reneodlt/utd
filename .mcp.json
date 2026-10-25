@@ -1,0 +1,12 @@
+{
+  "mcpServers": {
+    "utd": {
+      "command": "uv",
+      "args": ["run", "--directory", "mcp-server", "utd-mcp"],
+      "env": {
+        "UTD_URL": "http://localhost:8000",
+        "UTD_ACTOR": "claude"
+      }
+    }
+  }
+}
