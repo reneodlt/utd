@@ -12,9 +12,22 @@ and is pushed to every open browser the moment it happens.
 - **Claude Code**: an MCP server ships in the repo (`mcp-server/`) and is
   mounted inside the app at `/mcp`.
 
+## See it working
+
+A card that Claude Code moved and commented on, with a test screenshot
+attached and each change attributed in its history:
+
 ![A card that Claude Code moved and commented on, with a screenshot attached and each change attributed in its history](docs/images/utd-agent-workflow.png)
 
-The recording of the same flow is in [`docs/images/utd-agent-workflow.gif`](docs/images/utd-agent-workflow.gif).
+The same flow as a recording: the agent picks up the card, attaches the
+evidence, asks for a decision with two options, and the human picks one by
+moving the card back.
+
+![Recording: Claude Code moves a card, attaches a screenshot, asks for a decision, and the user moves the card](docs/images/utd-agent-workflow.gif)
+
+The attachment itself, a test run output captured as a screenshot:
+
+![Test run output attached to the card](docs/images/attachment-test-run.png)
 
 ## Why it's built for Claude Code
 
