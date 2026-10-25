@@ -12,6 +12,10 @@ and is pushed to every open browser the moment it happens.
 - **Claude Code**: an MCP server ships in the repo (`mcp-server/`) and is
   mounted inside the app at `/mcp`.
 
+![A card that Claude Code moved and commented on, with a screenshot attached and each change attributed in its history](docs/images/utd-agent-workflow.png)
+
+The recording of the same flow is in [`docs/images/utd-agent-workflow.gif`](docs/images/utd-agent-workflow.gif).
+
 ## Why it's built for Claude Code
 
 Claude Code is good at changing code and running commands. It is much less
